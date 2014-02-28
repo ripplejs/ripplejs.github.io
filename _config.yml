@@ -1,0 +1,4 @@
+name: Ripple.js
+markdown: redcarpet
+pygments: false
+permalink: /:title.html

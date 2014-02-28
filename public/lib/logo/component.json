@@ -1,0 +1,8 @@
+{
+  "name": "logo",
+  "images": [
+    "images/logo.svg",
+    "images/segment.svg"
+  ],
+  "styles": ["index.css"]
+}

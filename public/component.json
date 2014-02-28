@@ -1,0 +1,24 @@
+{
+  "name": "site",
+  "paths": [
+    "./lib"
+  ],
+  "local": [
+    "top-bar",
+    "logo"
+  ],
+  "styles": [
+    "index.css"
+  ],
+  "scripts": [
+    "index.js"
+  ],
+  "dependencies": {
+    "suitcss/utils": "*",
+    "necolas/normalize.css": "3.0.0",
+    "suitcss/components-grid": "1.1.0",
+    "segmentio/highlight": "0.0.1",
+    "segmentio/highlight-javascript": "*",
+    "segmentio/highlight-xml": "*"
+  }
+}

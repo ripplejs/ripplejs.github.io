@@ -1,0 +1,35 @@
+.TopBar {
+  position: fixed;
+  padding: 40px;
+  box-sizing: border-box;
+  width: 100%;
+  top: 0;
+  left: 0;
+  /*background: rgba(255,255,255,0.8);*/
+  z-index: 100;
+}
+
+.TopBar a {
+  font-family: ChronoWeb-Regular;
+  font-weight: 500;
+  font-size: 14px;
+  color: #414141;
+  line-height: 19px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: block;
+}
+
+.TopBar a:hover {
+  text-decoration: underline;
+}
+
+.TopBar-menu {
+  padding-left: 35px;
+  background: url('images/menu.svg') no-repeat 0 0;
+  float: left;
+}
+
+.TopBar-link {
+  float: right;
+}

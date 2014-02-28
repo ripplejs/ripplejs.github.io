@@ -1,0 +1,5 @@
+{
+  "name": "top-bar",
+  "images": ["images/menu.svg"],
+  "styles": ["index.css"]
+}
