@@ -2713,6 +2713,76 @@ th {
 
 
 
+@font-face {
+  font-family: 'Source Code';
+  src: url("typefaces-source-code-extra-light/fonts/source-code-extra-light.eot");
+  src: url("typefaces-source-code-extra-light/fonts/source-code-extra-light.eot?#iefix") format('embedded-opentype'),
+       url("typefaces-source-code-extra-light/fonts/source-code-extra-light.woff") format('woff'),
+       url("typefaces-source-code-extra-light/fonts/source-code-extra-light.ttf") format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Code';
+  src: url("typefaces-source-code-light/fonts/source-code-light.eot");
+  src: url("typefaces-source-code-light/fonts/source-code-light.eot?#iefix") format('embedded-opentype'),
+       url("typefaces-source-code-light/fonts/source-code-light.woff") format('woff'),
+       url("typefaces-source-code-light/fonts/source-code-light.ttf") format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Code';
+  src: url("typefaces-source-code-regular/fonts/source-code-regular.eot");
+  src: url("typefaces-source-code-regular/fonts/source-code-regular.eot?#iefix") format('embedded-opentype'),
+       url("typefaces-source-code-regular/fonts/source-code-regular.woff") format('woff'),
+       url("typefaces-source-code-regular/fonts/source-code-regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Code';
+  src: url("typefaces-source-code-medium/fonts/source-code-medium.eot");
+  src: url("typefaces-source-code-medium/fonts/source-code-medium.eot?#iefix") format('embedded-opentype'),
+       url("typefaces-source-code-medium/fonts/source-code-medium.woff") format('woff'),
+       url("typefaces-source-code-medium/fonts/source-code-medium.ttf") format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Source Code';
+  src: url("typefaces-source-code-semibold/fonts/source-code-semibold.eot");
+  src: url("typefaces-source-code-semibold/fonts/source-code-semibold.eot?#iefix") format('embedded-opentype'),
+       url("typefaces-source-code-semibold/fonts/source-code-semibold.woff") format('woff'),
+       url("typefaces-source-code-semibold/fonts/source-code-semibold.ttf") format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Source Code';
+  src: url("typefaces-source-code-bold/fonts/source-code-bold.eot");
+  src: url("typefaces-source-code-bold/fonts/source-code-bold.eot?#iefix") format('embedded-opentype'),
+       url("typefaces-source-code-bold/fonts/source-code-bold.woff") format('woff'),
+       url("typefaces-source-code-bold/fonts/source-code-bold.ttf") format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Code';
+  src: url("typefaces-source-code-black/fonts/source-code-black.eot");
+  src: url("typefaces-source-code-black/fonts/source-code-black.eot?#iefix") format('embedded-opentype'),
+       url("typefaces-source-code-black/fonts/source-code-black.woff") format('woff'),
+       url("typefaces-source-code-black/fonts/source-code-black.ttf") format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
 .TopBar {
   position: fixed;
   padding: 40px;
@@ -2725,8 +2795,7 @@ th {
 }
 
 .TopBar a {
-  font-family: ChronoWeb-Regular;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 14px;
   color: #414141;
   line-height: 19px;
@@ -2772,9 +2841,74 @@ th {
   display: block;
   margin: 40px auto;
 }
+
+@font-face {
+  font-family: 'Chrono';
+  font-style: italic;
+  font-weight: 400;
+  src: url("chrono/fonts/Chrono-Italic.otf") format('opentype');
+}
+
+@font-face {
+  font-family: 'Chrono';
+  font-weight: 400;
+  src: url("chrono/fonts/Chrono-Regular.otf") format('opentype');
+}
+
+@font-face {
+  font-family: 'Chrono';
+  font-weight: 200;
+  src: url("chrono/fonts/Chrono-Thin.otf") format('opentype');
+}
+
+@font-face {
+  font-family: 'Chrono';
+  font-style: italic;
+  font-weight: 200;
+  src: url("chrono/fonts/Chrono-ThinItalic.otf") format('opentype');
+}
+
+@font-face {
+  font-family: 'Chrono';
+  font-weight: 300;
+  src: url("chrono/fonts/Chrono-Light.otf") format('opentype');
+}
+
+@font-face {
+  font-family: 'Chrono';
+  font-style: italic;
+  font-weight: 300;
+  src: url("chrono/fonts/Chrono-LightItalic.otf") format('opentype');
+}
+
+@font-face {
+  font-family: 'Chrono';
+  font-weight: 500;
+  src: url("chrono/fonts/Chrono-Medium.otf") format('opentype');
+}
+
+@font-face {
+  font-family: 'Chrono';
+  font-style: italic;
+  font-weight: 500;
+  src: url("chrono/fonts/Chrono-MediumItalic.otf") format('opentype');
+}
+
+@font-face {
+  font-family: 'Chrono';
+  font-weight: 600;
+  src: url("chrono/fonts/Chrono-Bold.otf") format('opentype');
+}
+
+@font-face {
+  font-family: 'Chrono';
+  font-weight: 600;
+  font-style: italic;
+  src: url("chrono/fonts/Chrono-BoldItalic.otf") format('opentype');
+}
 body {
   color: #535353;
-  font-family: ChronoWeb-Regular;
+  font-family: 'Chrono';
   font-size: 16px;
   line-height: 1.5;
   padding: 0 40px;
@@ -2810,7 +2944,7 @@ hr {
 }
 
 .Hero-lead {
-  font-family: ChronoWeb-Light;
+  font-weight: 400;
   font-size: 23px;
   color: #535353;
   line-height: 34px;
@@ -2868,9 +3002,10 @@ hr {
 }
 
 .Copy h1 {
-  font-family: ChronoWeb-Light;
+  font-weight: 300;
   font-size: 35px;
   margin-bottom: 30px;
+  letter-spacing: -1px;
 }
 
 .Copy pre {
@@ -2880,7 +3015,7 @@ hr {
 .Copy p code {
   background: rgba(0,0,0,0.02);
   font-size: 14px;
-  font-family: SourceCodePro-Regular;
+  font-family: 'Source Code';
   border: 1px solid rgba(0,0,0,0.1);
   padding: 0 5px;
 }
@@ -2889,7 +3024,7 @@ hr {
   margin-top: 50px;
   margin-bottom: 20px;
   font-size: 22px;
-  font-family: ChronoWeb-Medium;
+  font-weight: 500;
   border-top: 2px solid #eee;
   padding-top: 30px;
 }
@@ -2898,7 +3033,7 @@ hr {
   margin-top: 30px;
   margin-bottom: 10px;
   font-size: 18px;
-  font-family: ChronoWeb-Medium;
+  font-weight: 500;
 }
 
 .Copy mark {
@@ -2922,7 +3057,7 @@ hr {
   padding: 20px 30px;
   font-size: 14px;
   border-radius: 3px;
-  font-family: SourceCodePro-Regular;
+  font-family: 'Source Code';
 }
 
 .Code--small {

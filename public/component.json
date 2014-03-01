@@ -5,7 +5,8 @@
   ],
   "local": [
     "top-bar",
-    "logo"
+    "logo",
+    "chrono"
   ],
   "styles": [
     "index.css"
@@ -19,6 +20,7 @@
     "suitcss/components-grid": "1.1.0",
     "segmentio/highlight": "0.0.1",
     "segmentio/highlight-javascript": "*",
-    "segmentio/highlight-xml": "*"
+    "segmentio/highlight-xml": "*",
+    "typefaces/source-code": "*"
   }
 }

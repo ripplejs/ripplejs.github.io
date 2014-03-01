@@ -1,6 +1,6 @@
 body {
   color: #535353;
-  font-family: ChronoWeb-Regular;
+  font-family: 'Chrono';
   font-size: 16px;
   line-height: 1.5;
   padding: 0 40px;
@@ -36,7 +36,7 @@ hr {
 }
 
 .Hero-lead {
-  font-family: ChronoWeb-Light;
+  font-weight: 400;
   font-size: 23px;
   color: #535353;
   line-height: 34px;
@@ -94,9 +94,10 @@ hr {
 }
 
 .Copy h1 {
-  font-family: ChronoWeb-Light;
+  font-weight: 300;
   font-size: 35px;
   margin-bottom: 30px;
+  letter-spacing: -1px;
 }
 
 .Copy pre {
@@ -106,7 +107,7 @@ hr {
 .Copy p code {
   background: rgba(0,0,0,0.02);
   font-size: 14px;
-  font-family: SourceCodePro-Regular;
+  font-family: 'Source Code';
   border: 1px solid rgba(0,0,0,0.1);
   padding: 0 5px;
 }
@@ -115,7 +116,7 @@ hr {
   margin-top: 50px;
   margin-bottom: 20px;
   font-size: 22px;
-  font-family: ChronoWeb-Medium;
+  font-weight: 500;
   border-top: 2px solid #eee;
   padding-top: 30px;
 }
@@ -124,7 +125,7 @@ hr {
   margin-top: 30px;
   margin-bottom: 10px;
   font-size: 18px;
-  font-family: ChronoWeb-Medium;
+  font-weight: 500;
 }
 
 .Copy mark {
@@ -148,7 +149,7 @@ hr {
   padding: 20px 30px;
   font-size: 14px;
   border-radius: 3px;
-  font-family: SourceCodePro-Regular;
+  font-family: 'Source Code';
 }
 
 .Code--small {
