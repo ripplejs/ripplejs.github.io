@@ -1,13 +1,11 @@
 <html>
 <head>
   <title>{{page.title}}</title>
+  <script type="text/javascript" src="//use.typekit.net/dsc1pef.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <link rel="stylesheet" type="text/css" href="/public/build/build.css">
 </head>
-<body>
-  <nav class="TopBar">
-    <a class="TopBar-menu" href="/guide">Guide</a>
-    <a class="TopBar-link" href="https://github.com/ripplejs/ripple">View on Github</a>
-  </nav>
+<body class="{{page.bodyClass}}">
   {{ content }}
   <script src="/public/build/build.js"></script>
   <script type="text/javascript">

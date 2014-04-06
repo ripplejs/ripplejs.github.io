@@ -3,28 +3,24 @@ layout: guide
 title: "Installation"
 ---
 
-<p class="Copy-lead">Ripple was built to be used by package managers. It is available for Component and npm. However, you can still download the standalone build and include it on your page.</p>
+Ripple was made to be used by Component. This is so that you are able to load in plugins and templates when you need them. However, you can include a standalone version on your page and you'll have access to the `ripple` global function.
 
-### Browser Support
+Ripple is roughly 8kb compressed and supports good browsers (and IE9+).
 
-Ripple supports good browsers and IE9+.
+### Standalone
 
-### File size
+Use this if you don't use a package manager and still just include scripts on your page.
 
-~8kb minified and gzipped.
+[Download]({{ site.github.repository_url }}) from Github.
 
-## Component
-<pre class="Code Code--small"><code>component install ripplejs/ripple</code></pre>
+### Component
 
-This is the preferred way of using Ripple.
+Component is the preferred way to use Ripple. This will make it extremely simple to share componenets and use plugins, including the associated styles and other assets.
 
-## npm
-<pre class="Code Code--small"><code>npm install ripplejs</code></pre>
+<pre class="Code"><code>component install ripplejs/ripple</code></pre>
 
-You can use tools like Browserify to use npm modules in the browser.
+### npm
 
-## Standalone
+For use with Browserify and similar tools. There isn't any support for server-side rendering.
 
-<pre class="Code Code--small"><code>&lt;script src="ripple/dist/ripple.min.js">&lt;/script></code></pre>
-
-If you include ripple on your page using the standalone build, it will expose the `ripple` variable on the window.
+<pre class="Code"><code>npm install ripplejs/ripple</code></pre>

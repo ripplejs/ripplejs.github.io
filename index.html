@@ -1,13 +1,17 @@
 ---
 layout: default
+bodyClass: 'Hero'
 title: Ripple.js - A framework for creating reactive components
 ---
 
-<main class="Hero">
+<nav class="TopBar">
+  <a class="TopBar-menu" href="/guide">Documentation</a>
+  <a class="TopBar-link" href="{{ site.github.repository_url }}">View on Github</a>
+</nav>
+<main class="Hero-content">
   <h1 class="Logo Hero-logo">ripple.js</h1>
-  <p class="Hero-lead">A tiny framework for writing UI components using interpolation, directives, and one-way data-binding. It's  simple, flexible and easy to extend.</p>
-  <code class="Hero-install">
-    component install ripplejs/ripple
-  </code>
+  <p class="Hero-lead">A tiny foundation for creating reactive components with interpolation, data-binding, and plugins. It's  simple, flexible and easy to extend.</p>
+  <a class="Button u-marginRs" href="{{ site.github.releases_url }}">Download v0.2.0</a>
+  <a class="Button" href="/guides/getting-started.html">Get Started</a>
   <a class="Segment Hero-segment" href="http://segment.io">Built by Segment.io</a>
 </main>
