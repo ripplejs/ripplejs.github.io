@@ -14,6 +14,10 @@
   "scripts": [
     "index.js"
   ],
+  "images": [
+    "images/bg.png",
+    "images/bg2.png"
+  ],
   "dependencies": {
     "suitcss/utils": "*",
     "necolas/normalize.css": "3.0.0",

@@ -4,8 +4,8 @@
     <description></description>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <path d="M1.5,1.5 L20.7307692,1.5" id="Line" stroke="#535353" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
-        <path d="M1.5,8.5 L20.7307692,8.5" id="Line" stroke="#535353" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
-        <path d="M1.5,15.5 L20.7307692,15.5" id="Line" stroke="#535353" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M1.5,1.5 L20.7307692,1.5" id="Line" stroke="#FFFFFF" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M1.5,8.5 L20.7307692,8.5" id="Line" stroke="#FFFFFF" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M1.5,15.5 L20.7307692,15.5" id="Line" stroke="#FFFFFF" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
     </g>
 </svg>

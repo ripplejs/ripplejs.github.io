@@ -2,6 +2,7 @@
   "name": "logo",
   "images": [
     "images/logo.svg",
+    "images/logo-color@2x.png",
     "images/segment.svg"
   ],
   "styles": ["index.css"]
