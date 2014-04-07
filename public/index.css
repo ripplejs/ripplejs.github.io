@@ -54,6 +54,16 @@ hr {
   margin: 0 auto;
 }
 
+.Hero-install {
+  line-height: 50px;
+  border-radius: 7px;
+  background: #3D424D;
+  display: inline-block;
+  padding: 0 30px;
+  margin: -10px 0 20px 0;
+  color: #fff;
+}
+
 .Hero-lead {
   font-weight: 300;
   font-size: 23px;
@@ -167,6 +177,10 @@ hr {
 
 .Copy mark {
   background: #FEFA95;
+}
+
+.Copy a {
+  color: #4BC9C3;
 }
 
 .Copy ul {
