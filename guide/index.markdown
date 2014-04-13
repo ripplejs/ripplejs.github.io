@@ -6,7 +6,9 @@ title: "Introduction"
 
 Ripple is similar to Facebook's React, Vue.js, and Reactive. However, each of these have their own downsides and don't encapsulate views fully. Views that you create with these libraries still require the consumer to have the library installed.
 
-Views created with ripple can be exported and not even require the user the include ripple on their own. This is because ripple is tiny and only provides basic features that plugins can build upon. Each view also have it's own compiler and there are no global plugins or API methods, so you can freely extend your views without worrying if it will affect other views.
+Views created with ripple can be exported and not even require the user to know that ripple was used at all. This is because ripple is tiny, encapsulated, and only provides the foundation to build views.
+
+Each view also has it's own compiler and there are no global plugins or API methods, so you can freely extend your views without worrying if it will affect other views.
 
 <pre class="Code" data-language="js">
 <code>var Person = ripple('&lt;div>&#123;&#123;name}}&lt;/div>')
