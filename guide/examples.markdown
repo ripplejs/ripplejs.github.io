@@ -22,3 +22,7 @@ to load templates rather than scattering them in your HTML.
 ## Like Button
 
 <iframe width="100%" height="300" src="http://jsfiddle.net/anthonyshort/ZA2gQ/6/embedded/result,js,html" frameborder="0"></iframe>
+
+## Iteration
+
+<iframe width="100%" height="500" src="http://jsfiddle.net/anthonyshort/kC45a/3/embedded/result,js,html" frameborder="0"></iframe>

@@ -143,6 +143,11 @@ hr {
 
 }
 
+.Copy > p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
 .Copy p code {
   background: rgba(0,0,0,0.02);
   font-size: 14px;
@@ -170,7 +175,7 @@ hr {
 
 .Copy h3 {
   margin-top: 30px;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   font-size: 18px;
   font-weight: 700;
 }
@@ -195,10 +200,10 @@ hr {
 
 .Code {
   /*border: 3px solid #96E2DE;*/
-  margin: 40px 0;
+  margin: 20px 0;
   max-width: none;
   background: rgba(0, 0, 0, 0.03);
-  padding: 40px 100px;
+  padding: 20px 100px;
   font-size: 14px;
   font-family: "Source Code";
   font-weight: 400;

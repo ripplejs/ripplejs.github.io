@@ -16,6 +16,16 @@ var person = new Person({
 
 person.appendTo(document.body);</code></pre>
 
+## Features
+
+ * Batched DOM updates
+ * Plain object models
+ * Data-binding with mustache-style templates
+ * Customize features with plugins
+ * ~8kb in size
+ * Directives like [Reactive](https://github.com/component/reactive) and [Vue.js](http://vuejs.org)
+ * Composition for re-usabe views
+
 ## Browser Support
 
 Supports real browsers and IE9+.
