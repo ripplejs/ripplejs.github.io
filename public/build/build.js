@@ -210,6 +210,8 @@ require.relative = function(parent) {
 
 
 
+
+
 require.register("component-escape-html/index.js", Function("exports, require, module",
 "/**\n\
  * Escape special characters in the given string of html.\n\
@@ -455,45 +457,55 @@ function plugin(highlight){\n\
 var grammar = {};\n\
 \n\
 /**\n\
- * Booleans.\n\
- */\n\
-\n\
-grammar.boolean = /\\b(true|false)\\b/;\n\
-\n\
-/**\n\
- * Booleans.\n\
- */\n\
-\n\
-grammar.comment = /(?!\\\\{2})(\\/\\*[\\w\\W]*?\\*\\/|\\/\\/.*?$)/m;\n\
-\n\
-/**\n\
- * Functions.\n\
- */\n\
-\n\
-grammar.function = {\n\
-  pattern: /(\\w+)\\(/,\n\
-  children: {\n\
-    punctuation: /\\(/\n\
-  }\n\
-};\n\
-\n\
-/**\n\
- * Numbers.\n\
- */\n\
-\n\
-grammar.number = /\\b-?(0x[\\dA-Fa-f]+|\\d*\\.?\\d+([Ee]-?\\d+)?|NaN|-?Infinity)\\b/;\n\
-\n\
-/**\n\
  * Strings.\n\
  */\n\
 \n\
 grammar.string = /((\"|')(\\\\?.)*?\\2)/;\n\
 \n\
 /**\n\
+ * Comments.\n\
+ */\n\
+\n\
+grammar.comment = /(?!\\\\{2})(\\/\\*[\\w\\W]*?\\*\\/|\\/\\/.*?$)/m;\n\
+\n\
+/**\n\
+ * Booleans.\n\
+ */\n\
+\n\
+grammar.boolean = /\\b(true|false)\\b/;\n\
+\n\
+/**\n\
  * Keywords.\n\
  */\n\
 \n\
-grammar.keyword = /\\b(break|catch|continue|do|else|finally|for|function|if|in|instanceof|let|new|null|return|this|self|throw|try|typeof|var|while|with|yield)\\b/;\n\
+grammar.keyword = /\\b(break|catch|continue|delete|do|else|finally|for|function|if|in|instanceof|let|new|null|return|this|self|throw|try|typeof|var|while|with|yield)\\b/;\n\
+\n\
+/**\n\
+ * Constants.\n\
+ */\n\
+\n\
+grammar.constant = /\\b(document|window|global)\\b/;\n\
+\n\
+/**\n\
+ * Functions.\n\
+ *\n\
+ * Children are set separately to maintain ordering.\n\
+ */\n\
+\n\
+grammar.function = {\n\
+  pattern: /(\\w+)\\(/,\n\
+  children: {}\n\
+};\n\
+\n\
+grammar.function.children.class = /\\b([A-Z]\\w*)\\b/;\n\
+grammar.function.children.function = /(\\w+)/;\n\
+grammar.function.children.punctuation = /\\(/;\n\
+\n\
+/**\n\
+ * Numbers.\n\
+ */\n\
+\n\
+grammar.number = /\\b-?(0x[\\dA-Fa-f]+|\\d*\\.?\\d+([Ee]-?\\d+)?|NaN|-?Infinity)\\b/;\n\
 \n\
 /**\n\
  * Operators.\n\
@@ -605,6 +617,10 @@ var els = document.querySelectorAll('.Code');\n\
 })\n\
 //@ sourceURL=site/index.js"
 ));
+
+
+
+
 
 
 

@@ -1,6 +1,23 @@
-/* ==========================================================================
-   Display utilities
-   ========================================================================== */
+/**
+ * Vertical alignment utilities
+ * Depends on an appropriate `display` value.
+ */
+
+.u-alignBaseline {
+  vertical-align: baseline !important;
+}
+
+.u-alignBottom {
+  vertical-align: bottom !important;
+}
+
+.u-alignMiddle {
+  vertical-align: middle !important;
+}
+
+.u-alignTop {
+  vertical-align: top !important;
+}
 
 /**
  * Display-type utilities
@@ -10,8 +27,16 @@
   display: inline !important;
 }
 
+/**
+ * 1. Fix for Firefox bug: an image styled `max-width:100%` within an
+ * inline-block will display at its default size, and not limit its width to
+ * 100% of an ancestral container.
+ */
+
 .u-inlineBlock {
   display: inline-block !important;
+  max-width: 100%;
+  /* 1 */
 }
 
 .u-block {
@@ -24,31 +49,6 @@
 
 .u-tableCell {
   display: table-cell !important;
-}
-
-/* ==========================================================================
-   Layout utilities
-   ========================================================================== */
-
-/**
- * Vertical alignment utilities
- * Depends on an appropriate `display` value.
- */
-
-.u-alignTop {
-  vertical-align: top !important;
-}
-
-.u-alignMiddle {
-  vertical-align: middle !important;
-}
-
-.u-alignBaseline {
-  vertical-align: baseline !important;
-}
-
-.u-alignBottom {
-  vertical-align: bottom !important;
 }
 
 /**
@@ -122,40 +122,9 @@
   float: right !important;
 }
 
-/**
- * Object position helpers.
- *
- * Float an object left or right, and include some space between the object and
- * proceeding objects.
- */
+/*! suit-utils-link v0.3.1 | MIT License | github.com/suitcss */
 
-.u-objLeft {
-  float: left !important;
-  margin-right: 10px;
-}
 
-.u-objRight {
-  float: right !important;
-  margin-left: 10px;
-}
-
-/**
- * 1. Remove excess space below images
- * 2. Guard against `img {max-width:100%}` hiding this utility's images in
- *    IE 8.
- */
-
-.u-objLeft img,
-.u-objRight img {
-  display: block;
-  /* 1 */
-  max-width: none;
-  /* 2 */
-}
-
-/* ==========================================================================
-   Link-specific utilities
-   ========================================================================== */
 
 /**
  * Clean link
@@ -180,8 +149,8 @@
  * Example HTML:
  *
  * <a class="u-linkComplex" href="#">
- *     Link complex
- *     <span class="u-linkComplex-target">target</span>
+ *   Link complex
+ *   <span class="u-linkComplexTarget">target</span>
  * </a>
  */
 
@@ -192,9 +161,9 @@
   text-decoration: none !important;
 }
 
-.u-linkComplex:hover .u-linkComplex-target,
-.u-linkComplex:focus .u-linkComplex-target,
-.u-linkComplex:active .u-linkComplex-target {
+.u-linkComplex:hover .u-linkComplexTarget,
+.u-linkComplex:focus .u-linkComplexTarget,
+.u-linkComplex:active .u-linkComplexTarget {
   text-decoration: underline !important;
 }
 
@@ -216,39 +185,33 @@
  * Pseudo-link
  *
  * Another interactive element, e.g., `button`, styled to look like an anchor.
- * Relies on the use of a placeholder anchor (and ideally ARIA).
+ * Relies on the utility selector being added to the link base styles rule.
  *
  * Example HTML:
  *
  * <button class="u-linkPseudo" type="button">
- *     <a role="presentation">Button content</a>
+ *   Button content
  * </button>
  */
 
 .u-linkPseudo {
-  display: inline !important;
-  padding: 0 !important;
-  border: 0 !important;
-  margin: 0 !important;
-  background: transparent !important;
-  color: inherit !important;
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  color: inherit;
   cursor: pointer !important;
-  font: inherit !important;
+  font: inherit;
 }
 
 .u-linkPseudo:hover,
 .u-linkPseudo:focus,
 .u-linkPseudo:active {
-  background: transparent !important;
-  color: inherit !important;
+  background: transparent;
+  color: inherit;
+  text-decoration: underline;
 }
-
-/* ==========================================================================
-   Offset utilities
-   ========================================================================== */
-
-/* Proportional offset before
-   ========================================================================== */
 
 /**
  * Specify the proportional offset before an object.
@@ -257,7 +220,7 @@
  */
 
 .u-before1of12 {
-  margin-left: 8.333% !important;
+  margin-left: 8.333333333333332% !important;
 }
 
 .u-before1of10 {
@@ -270,7 +233,7 @@
 
 .u-before1of6,
 .u-before2of12 {
-  margin-left: 16.667% !important;
+  margin-left: 16.666666666666664% !important;
 }
 
 .u-before1of5,
@@ -291,7 +254,7 @@
 .u-before1of3,
 .u-before2of6,
 .u-before4of12 {
-  margin-left: 33.333% !important;
+  margin-left: 33.33333333333333% !important;
 }
 
 .u-before3of8 {
@@ -304,7 +267,7 @@
 }
 
 .u-before5of12 {
-  margin-left: 41.667% !important;
+  margin-left: 41.66666666666667% !important;
 }
 
 .u-before1of2,
@@ -317,7 +280,7 @@
 }
 
 .u-before7of12 {
-  margin-left: 58.333% !important;
+  margin-left: 58.333333333333336% !important;
 }
 
 .u-before3of5,
@@ -332,7 +295,7 @@
 .u-before2of3,
 .u-before4of6,
 .u-before8of12 {
-  margin-left: 66.667% !important;
+  margin-left: 66.66666666666666% !important;
 }
 
 .u-before7of10 {
@@ -352,7 +315,7 @@
 
 .u-before5of6,
 .u-before10of12 {
-  margin-left: 83.333% !important;
+  margin-left: 83.33333333333334% !important;
 }
 
 .u-before7of8 {
@@ -364,20 +327,17 @@
 }
 
 .u-before11of12 {
-  margin-left: 91.667% !important;
+  margin-left: 91.66666666666666% !important;
 }
 
-/* Proportional offset after
-   ========================================================================== */
-
 /**
- * Specify the proportional offset after an object.
+ * Specify the proportional offset after an element.
  * Intentional redundancy build into each set of unit classes.
  * Supports: 2, 4, 5, 6, 8, 10, 12 section
  */
 
 .u-after1of12 {
-  margin-right: 8.333% !important;
+  margin-right: 8.333333333333332% !important;
 }
 
 .u-after1of10 {
@@ -390,7 +350,7 @@
 
 .u-after1of6,
 .u-after2of12 {
-  margin-right: 16.667% !important;
+  margin-right: 16.666666666666664% !important;
 }
 
 .u-after1of5,
@@ -411,7 +371,7 @@
 .u-after1of3,
 .u-after2of6,
 .u-after4of12 {
-  margin-right: 33.333% !important;
+  margin-right: 33.33333333333333% !important;
 }
 
 .u-after3of8 {
@@ -424,7 +384,7 @@
 }
 
 .u-after5of12 {
-  margin-right: 41.667% !important;
+  margin-right: 41.66666666666667% !important;
 }
 
 .u-after1of2,
@@ -437,7 +397,7 @@
 }
 
 .u-after7of12 {
-  margin-right: 58.333% !important;
+  margin-right: 58.333333333333336% !important;
 }
 
 .u-after3of5,
@@ -452,7 +412,7 @@
 .u-after2of3,
 .u-after4of6,
 .u-after8of12 {
-  margin-right: 66.667% !important;
+  margin-right: 66.66666666666666% !important;
 }
 
 .u-after7of10 {
@@ -472,7 +432,7 @@
 
 .u-after5of6,
 .u-after10of12 {
-  margin-right: 83.333% !important;
+  margin-right: 83.33333333333334% !important;
 }
 
 .u-after7of8 {
@@ -484,768 +444,48 @@
 }
 
 .u-after11of12 {
-  margin-right: 91.667% !important;
+  margin-right: 91.66666666666666% !important;
 }
 
-/* ==========================================================================
-   Offset utilities (breakpoint 1)
-   ========================================================================== */
-
-/* Proportional offset before
-   ========================================================================== */
+.u-posAbsolute {
+  position: absolute !important;
+}
 
 /**
- * Specify the proportional offset before an object.
- * Intentional redundancy build into each set of unit classes.
- * Supports: 2, 3, 4, 5, 6, 8, 10, 12 section
+ * Pins to all corners by defaults. But when a width and/or height are
+ * provided, the element will be centered in its nearest relatively-positioned
+ * ancestor.
  */
 
-.v1-u-beforeNone {
-  margin-left: 0 !important;
+.u-posAbsoluteCenter {
+  bottom: 0 !important;
+  left: 0 !important;
+  margin: auto !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
 }
-
-.v1-u-before1of12 {
-  margin-left: 8.333% !important;
-}
-
-.v1-u-before1of10 {
-  margin-left: 10% !important;
-}
-
-.v1-u-before1of8 {
-  margin-left: 12.5% !important;
-}
-
-.v1-u-before1of6,
-.v1-u-before2of12 {
-  margin-left: 16.667% !important;
-}
-
-.v1-u-before1of5,
-.v1-u-before2of10 {
-  margin-left: 20% !important;
-}
-
-.v1-u-before1of4,
-.v1-u-before2of8,
-.v1-u-before3of12 {
-  margin-left: 25% !important;
-}
-
-.v1-u-before3of10 {
-  margin-left: 30% !important;
-}
-
-.v1-u-before1of3,
-.v1-u-before2of6,
-.v1-u-before4of12 {
-  margin-left: 33.333% !important;
-}
-
-.v1-u-before3of8 {
-  margin-left: 37.5% !important;
-}
-
-.v1-u-before2of5,
-.v1-u-before4of10 {
-  margin-left: 40% !important;
-}
-
-.v1-u-before5of12 {
-  margin-left: 41.667% !important;
-}
-
-.v1-u-before1of2,
-.v1-u-before2of4,
-.v1-u-before3of6,
-.v1-u-before4of8,
-.v1-u-before5of10,
-.v1-u-before6of12 {
-  margin-left: 50% !important;
-}
-
-.v1-u-before7of12 {
-  margin-left: 58.333% !important;
-}
-
-.v1-u-before3of5,
-.v1-u-before6of10 {
-  margin-left: 60% !important;
-}
-
-.v1-u-before5of8 {
-  margin-left: 62.5% !important;
-}
-
-.v1-u-before2of3,
-.v1-u-before4of6,
-.v1-u-before8of12 {
-  margin-left: 66.667% !important;
-}
-
-.v1-u-before7of10 {
-  margin-left: 70% !important;
-}
-
-.v1-u-before3of4,
-.v1-u-before6of8,
-.v1-u-before9of12 {
-  margin-left: 75% !important;
-}
-
-.v1-u-before4of5,
-.v1-u-before8of10 {
-  margin-left: 80% !important;
-}
-
-.v1-u-before5of6,
-.v1-u-before10of12 {
-  margin-left: 83.333% !important;
-}
-
-.v1-u-before7of8 {
-  margin-left: 87.5% !important;
-}
-
-.v1-u-before9of10 {
-  margin-left: 90% !important;
-}
-
-.v1-u-before11of12 {
-  margin-left: 91.667% !important;
-}
-
-/* Proportional offset after
-   ========================================================================== */
 
 /**
- * Specify the proportional offset after an object.
- * Intentional redundancy build into each set of unit classes.
- * Supports: 2, 4, 5, 6, 8, 10, 12 section
+ * 1. Make sure fixed elements are promoted into a new layer, for performance
+ *    reasons.
  */
 
-.v1-u-afterNone {
-  margin-left: 0 !important;
+.u-posFixed {
+  position: fixed !important;
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  /* 1 */
 }
 
-.v1-u-after1of12 {
-  margin-right: 8.333% !important;
+.u-posRelative {
+  position: relative !important;
 }
 
-.v1-u-after1of10 {
-  margin-right: 10% !important;
+.u-posStatic {
+  position: static !important;
 }
-
-.v1-u-after1of8 {
-  margin-right: 12.5% !important;
-}
-
-.v1-u-after1of6,
-.v1-u-after2of12 {
-  margin-right: 16.667% !important;
-}
-
-.v1-u-after1of5,
-.v1-u-after2of10 {
-  margin-right: 20% !important;
-}
-
-.v1-u-after1of4,
-.v1-u-after2of8,
-.v1-u-after3of12 {
-  margin-right: 25% !important;
-}
-
-.v1-u-after3of10 {
-  margin-right: 30% !important;
-}
-
-.v1-u-after1of3,
-.v1-u-after2of6,
-.v1-u-after4of12 {
-  margin-right: 33.333% !important;
-}
-
-.v1-u-after3of8 {
-  margin-right: 37.5% !important;
-}
-
-.v1-u-after2of5,
-.v1-u-after4of10 {
-  margin-right: 40% !important;
-}
-
-.v1-u-after5of12 {
-  margin-right: 41.667% !important;
-}
-
-.v1-u-after1of2,
-.v1-u-after2of4,
-.v1-u-after3of6,
-.v1-u-after4of8,
-.v1-u-after5of10,
-.v1-u-after6of12 {
-  margin-right: 50% !important;
-}
-
-.v1-u-after7of12 {
-  margin-right: 58.333% !important;
-}
-
-.v1-u-after3of5,
-.v1-u-after6of10 {
-  margin-right: 60% !important;
-}
-
-.v1-u-after5of8 {
-  margin-right: 62.5% !important;
-}
-
-.v1-u-after2of3,
-.v1-u-after4of6,
-.v1-u-after8of12 {
-  margin-right: 66.667% !important;
-}
-
-.v1-u-after7of10 {
-  margin-right: 70% !important;
-}
-
-.v1-u-after3of4,
-.v1-u-after6of8,
-.v1-u-after9of12 {
-  margin-right: 75% !important;
-}
-
-.v1-u-after4of5,
-.v1-u-after8of10 {
-  margin-right: 80% !important;
-}
-
-.v1-u-after5of6,
-.v1-u-after10of12 {
-  margin-right: 83.333% !important;
-}
-
-.v1-u-after7of8 {
-  margin-right: 87.5% !important;
-}
-
-.v1-u-after9of10 {
-  margin-right: 90% !important;
-}
-
-.v1-u-after11of12 {
-  margin-right: 91.667% !important;
-}
-
-/* ==========================================================================
-   Offset utilities (breakpoint 2)
-   ========================================================================== */
-
-/* Proportional offset before
-   ========================================================================== */
-
-/**
- * Specify the proportional offset before an object.
- * Intentional redundancy build into each set of unit classes.
- * Supports: 2, 3, 4, 5, 6, 8, 10, 12 section
- */
-
-.v2-u-beforeNone {
-  margin-left: 0 !important;
-}
-
-.v2-u-before1of12 {
-  margin-left: 8.333% !important;
-}
-
-.v2-u-before1of10 {
-  margin-left: 10% !important;
-}
-
-.v2-u-before1of8 {
-  margin-left: 12.5% !important;
-}
-
-.v2-u-before1of6,
-.v2-u-before2of12 {
-  margin-left: 16.667% !important;
-}
-
-.v2-u-before1of5,
-.v2-u-before2of10 {
-  margin-left: 20% !important;
-}
-
-.v2-u-before1of4,
-.v2-u-before2of8,
-.v2-u-before3of12 {
-  margin-left: 25% !important;
-}
-
-.v2-u-before3of10 {
-  margin-left: 30% !important;
-}
-
-.v2-u-before1of3,
-.v2-u-before2of6,
-.v2-u-before4of12 {
-  margin-left: 33.333% !important;
-}
-
-.v2-u-before3of8 {
-  margin-left: 37.5% !important;
-}
-
-.v2-u-before2of5,
-.v2-u-before4of10 {
-  margin-left: 40% !important;
-}
-
-.v2-u-before5of12 {
-  margin-left: 41.667% !important;
-}
-
-.v2-u-before1of2,
-.v2-u-before2of4,
-.v2-u-before3of6,
-.v2-u-before4of8,
-.v2-u-before5of10,
-.v2-u-before6of12 {
-  margin-left: 50% !important;
-}
-
-.v2-u-before7of12 {
-  margin-left: 58.333% !important;
-}
-
-.v2-u-before3of5,
-.v2-u-before6of10 {
-  margin-left: 60% !important;
-}
-
-.v2-u-before5of8 {
-  margin-left: 62.5% !important;
-}
-
-.v2-u-before2of3,
-.v2-u-before4of6,
-.v2-u-before8of12 {
-  margin-left: 66.667% !important;
-}
-
-.v2-u-before7of10 {
-  margin-left: 70% !important;
-}
-
-.v2-u-before3of4,
-.v2-u-before6of8,
-.v2-u-before9of12 {
-  margin-left: 75% !important;
-}
-
-.v2-u-before4of5,
-.v2-u-before8of10 {
-  margin-left: 80% !important;
-}
-
-.v2-u-before5of6,
-.v2-u-before10of12 {
-  margin-left: 83.333% !important;
-}
-
-.v2-u-before7of8 {
-  margin-left: 87.5% !important;
-}
-
-.v2-u-before9of10 {
-  margin-left: 90% !important;
-}
-
-.v2-u-before11of12 {
-  margin-left: 91.667% !important;
-}
-
-/* Proportional offset after
-   ========================================================================== */
-
-/**
- * Specify the proportional offset after an object.
- * Intentional redundancy build into each set of unit classes.
- * Supports: 2, 4, 5, 6, 8, 10, 12 section
- */
-
-.v2-u-afterNone {
-  margin-left: 0 !important;
-}
-
-.v2-u-after1of12 {
-  margin-right: 8.333% !important;
-}
-
-.v2-u-after1of10 {
-  margin-right: 10% !important;
-}
-
-.v2-u-after1of8 {
-  margin-right: 12.5% !important;
-}
-
-.v2-u-after1of6,
-.v2-u-after2of12 {
-  margin-right: 16.667% !important;
-}
-
-.v2-u-after1of5,
-.v2-u-after2of10 {
-  margin-right: 20% !important;
-}
-
-.v2-u-after1of4,
-.v2-u-after2of8,
-.v2-u-after3of12 {
-  margin-right: 25% !important;
-}
-
-.v2-u-after3of10 {
-  margin-right: 30% !important;
-}
-
-.v2-u-after1of3,
-.v2-u-after2of6,
-.v2-u-after4of12 {
-  margin-right: 33.333% !important;
-}
-
-.v2-u-after3of8 {
-  margin-right: 37.5% !important;
-}
-
-.v2-u-after2of5,
-.v2-u-after4of10 {
-  margin-right: 40% !important;
-}
-
-.v2-u-after5of12 {
-  margin-right: 41.667% !important;
-}
-
-.v2-u-after1of2,
-.v2-u-after2of4,
-.v2-u-after3of6,
-.v2-u-after4of8,
-.v2-u-after5of10,
-.v2-u-after6of12 {
-  margin-right: 50% !important;
-}
-
-.v2-u-after7of12 {
-  margin-right: 58.333% !important;
-}
-
-.v2-u-after3of5,
-.v2-u-after6of10 {
-  margin-right: 60% !important;
-}
-
-.v2-u-after5of8 {
-  margin-right: 62.5% !important;
-}
-
-.v2-u-after2of3,
-.v2-u-after4of6,
-.v2-u-after8of12 {
-  margin-right: 66.667% !important;
-}
-
-.v2-u-after7of10 {
-  margin-right: 70% !important;
-}
-
-.v2-u-after3of4,
-.v2-u-after6of8,
-.v2-u-after9of12 {
-  margin-right: 75% !important;
-}
-
-.v2-u-after4of5,
-.v2-u-after8of10 {
-  margin-right: 80% !important;
-}
-
-.v2-u-after5of6,
-.v2-u-after10of12 {
-  margin-right: 83.333% !important;
-}
-
-.v2-u-after7of8 {
-  margin-right: 87.5% !important;
-}
-
-.v2-u-after9of10 {
-  margin-right: 90% !important;
-}
-
-.v2-u-after11of12 {
-  margin-right: 91.667% !important;
-}
-
-/* ==========================================================================
-   Offset utilities (breakpoint 3)
-   ========================================================================== */
-
-/* Proportional offset before
-   ========================================================================== */
-
-/**
- * Specify the proportional offset before an object.
- * Intentional redundancy build into each set of unit classes.
- * Supports: 2, 3, 4, 5, 6, 8, 10, 12 section
- */
-
-.v3-u-beforeNone {
-  margin-left: 0 !important;
-}
-
-.v3-u-before1of12 {
-  margin-left: 8.333% !important;
-}
-
-.v3-u-before1of10 {
-  margin-left: 10% !important;
-}
-
-.v3-u-before1of8 {
-  margin-left: 12.5% !important;
-}
-
-.v3-u-before1of6,
-.v3-u-before2of12 {
-  margin-left: 16.667% !important;
-}
-
-.v3-u-before1of5,
-.v3-u-before2of10 {
-  margin-left: 20% !important;
-}
-
-.v3-u-before1of4,
-.v3-u-before2of8,
-.v3-u-before3of12 {
-  margin-left: 25% !important;
-}
-
-.v3-u-before3of10 {
-  margin-left: 30% !important;
-}
-
-.v3-u-before1of3,
-.v3-u-before2of6,
-.v3-u-before4of12 {
-  margin-left: 33.333% !important;
-}
-
-.v3-u-before3of8 {
-  margin-left: 37.5% !important;
-}
-
-.v3-u-before2of5,
-.v3-u-before4of10 {
-  margin-left: 40% !important;
-}
-
-.v3-u-before5of12 {
-  margin-left: 41.667% !important;
-}
-
-.v3-u-before1of2,
-.v3-u-before2of4,
-.v3-u-before3of6,
-.v3-u-before4of8,
-.v3-u-before5of10,
-.v3-u-before6of12 {
-  margin-left: 50% !important;
-}
-
-.v3-u-before7of12 {
-  margin-left: 58.333% !important;
-}
-
-.v3-u-before3of5,
-.v3-u-before6of10 {
-  margin-left: 60% !important;
-}
-
-.v3-u-before5of8 {
-  margin-left: 62.5% !important;
-}
-
-.v3-u-before2of3,
-.v3-u-before4of6,
-.v3-u-before8of12 {
-  margin-left: 66.667% !important;
-}
-
-.v3-u-before7of10 {
-  margin-left: 70% !important;
-}
-
-.v3-u-before3of4,
-.v3-u-before6of8,
-.v3-u-before9of12 {
-  margin-left: 75% !important;
-}
-
-.v3-u-before4of5,
-.v3-u-before8of10 {
-  margin-left: 80% !important;
-}
-
-.v3-u-before5of6,
-.v3-u-before10of12 {
-  margin-left: 83.333% !important;
-}
-
-.v3-u-before7of8 {
-  margin-left: 87.5% !important;
-}
-
-.v3-u-before9of10 {
-  margin-left: 90% !important;
-}
-
-.v3-u-before11of12 {
-  margin-left: 91.667% !important;
-}
-
-/* Proportional offset after
-   ========================================================================== */
-
-/**
- * Specify the proportional offset after an object.
- * Intentional redundancy build into each set of unit classes.
- * Supports: 2, 4, 5, 6, 8, 10, 12 section
- */
-
-.v3-u-afterNone {
-  margin-left: 0 !important;
-}
-
-.v3-u-after1of12 {
-  margin-right: 8.333% !important;
-}
-
-.v3-u-after1of10 {
-  margin-right: 10% !important;
-}
-
-.v3-u-after1of8 {
-  margin-right: 12.5% !important;
-}
-
-.v3-u-after1of6,
-.v3-u-after2of12 {
-  margin-right: 16.667% !important;
-}
-
-.v3-u-after1of5,
-.v3-u-after2of10 {
-  margin-right: 20% !important;
-}
-
-.v3-u-after1of4,
-.v3-u-after2of8,
-.v3-u-after3of12 {
-  margin-right: 25% !important;
-}
-
-.v3-u-after3of10 {
-  margin-right: 30% !important;
-}
-
-.v3-u-after1of3,
-.v3-u-after2of6,
-.v3-u-after4of12 {
-  margin-right: 33.333% !important;
-}
-
-.v3-u-after3of8 {
-  margin-right: 37.5% !important;
-}
-
-.v3-u-after2of5,
-.v3-u-after4of10 {
-  margin-right: 40% !important;
-}
-
-.v3-u-after5of12 {
-  margin-right: 41.667% !important;
-}
-
-.v3-u-after1of2,
-.v3-u-after2of4,
-.v3-u-after3of6,
-.v3-u-after4of8,
-.v3-u-after5of10,
-.v3-u-after6of12 {
-  margin-right: 50% !important;
-}
-
-.v3-u-after7of12 {
-  margin-right: 58.333% !important;
-}
-
-.v3-u-after3of5,
-.v3-u-after6of10 {
-  margin-right: 60% !important;
-}
-
-.v3-u-after5of8 {
-  margin-right: 62.5% !important;
-}
-
-.v3-u-after2of3,
-.v3-u-after4of6,
-.v3-u-after8of12 {
-  margin-right: 66.667% !important;
-}
-
-.v3-u-after7of10 {
-  margin-right: 70% !important;
-}
-
-.v3-u-after3of4,
-.v3-u-after6of8,
-.v3-u-after9of12 {
-  margin-right: 75% !important;
-}
-
-.v3-u-after4of5,
-.v3-u-after8of10 {
-  margin-right: 80% !important;
-}
-
-.v3-u-after5of6,
-.v3-u-after10of12 {
-  margin-right: 83.333% !important;
-}
-
-.v3-u-after7of8 {
-  margin-right: 87.5% !important;
-}
-
-.v3-u-after9of10 {
-  margin-right: 90% !important;
-}
-
-.v3-u-after11of12 {
-  margin-right: 91.667% !important;
-}
-
-/* ==========================================================================
-   Dimension utilities
-   ========================================================================== */
 
 /* Intrinsic widths
    ========================================================================== */
@@ -1293,8 +533,8 @@
  */
 
 .u-sizeFull {
-  -moz-box-sizing: border-box !important;
   -webkit-box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important;
   box-sizing: border-box !important;
   display: block !important;
   width: 100% !important;
@@ -1310,7 +550,7 @@
  */
 
 .u-size1of12 {
-  width: 8.333% !important;
+  width: 8.333333333333332% !important;
 }
 
 .u-size1of10 {
@@ -1323,7 +563,7 @@
 
 .u-size1of6,
 .u-size2of12 {
-  width: 16.667% !important;
+  width: 16.666666666666664% !important;
 }
 
 .u-size1of5,
@@ -1344,7 +584,7 @@
 .u-size1of3,
 .u-size2of6,
 .u-size4of12 {
-  width: 33.333% !important;
+  width: 33.33333333333333% !important;
 }
 
 .u-size3of8 {
@@ -1357,7 +597,7 @@
 }
 
 .u-size5of12 {
-  width: 41.667% !important;
+  width: 41.66666666666667% !important;
 }
 
 .u-size1of2,
@@ -1370,7 +610,7 @@
 }
 
 .u-size7of12 {
-  width: 58.333% !important;
+  width: 58.333333333333336% !important;
 }
 
 .u-size3of5,
@@ -1385,7 +625,7 @@
 .u-size2of3,
 .u-size4of6,
 .u-size8of12 {
-  width: 66.667% !important;
+  width: 66.66666666666666% !important;
 }
 
 .u-size7of10 {
@@ -1405,7 +645,7 @@
 
 .u-size5of6,
 .u-size10of12 {
-  width: 83.333% !important;
+  width: 83.33333333333334% !important;
 }
 
 .u-size7of8 {
@@ -1417,821 +657,8 @@
 }
 
 .u-size11of12 {
-  width: 91.667% !important;
+  width: 91.66666666666666% !important;
 }
-
-/* ==========================================================================
-   Dimension utilities (breakpoint 1)
-   ========================================================================== */
-
-/* Intrinsic widths
-   ========================================================================== */
-
-/**
- * Make an element shrink wrap its content.
- */
-
-.v1-u-sizeFit,
-.v1-u-sizeFitAlt {
-  display: block !important;
-  float: left !important;
-  width: auto !important;
-}
-
-.v1-u-sizeFitAlt {
-  float: right !important;
-}
-
-/**
- * Make an element fill the remaining space.
- * N.B. This will hide overflow.
- */
-
-.v1-u-sizeFill {
-  display: block !important;
-  overflow: hidden !important;
-  width: auto !important;
-}
-
-/**
- * An alternative method to make an element fill the remaining space.
- * N.B. Do not use if child elements might be wider than the remaining space.
- * In Chrome, Safari, and Firefox it results in undesired layout.
- */
-
-.v1-u-sizeFillAlt {
-  display: table-cell !important;
-  max-width: 100% !important;
-  width: 10000px !important;
-}
-
-/**
- * Make an element the width of its parent.
- */
-
-.v1-u-sizeFull {
-  -moz-box-sizing: border-box !important;
-  -webkit-box-sizing: border-box !important;
-  box-sizing: border-box !important;
-  display: block !important;
-  width: 100% !important;
-}
-
-/* Proportional widths
-   ========================================================================== */
-
-/**
- * Specify the proportional width of an object.
- * Intentional redundancy build into each set of unit classes.
- * Supports: 2, 3, 4, 5, 6, 8, 10, 12 part
- */
-
-.v1-u-size1of12 {
-  width: 8.333% !important;
-}
-
-.v1-u-size1of10 {
-  width: 10% !important;
-}
-
-.v1-u-size1of8 {
-  width: 12.5% !important;
-}
-
-.v1-u-size1of6,
-.v1-u-size2of12 {
-  width: 16.667% !important;
-}
-
-.v1-u-size1of5,
-.v1-u-size2of10 {
-  width: 20% !important;
-}
-
-.v1-u-size1of4,
-.v1-u-size2of8,
-.v1-u-size3of12 {
-  width: 25% !important;
-}
-
-.v1-u-size3of10 {
-  width: 30% !important;
-}
-
-.v1-u-size1of3,
-.v1-u-size2of6,
-.v1-u-size4of12 {
-  width: 33.333% !important;
-}
-
-.v1-u-size3of8 {
-  width: 37.5% !important;
-}
-
-.v1-u-size2of5,
-.v1-u-size4of10 {
-  width: 40% !important;
-}
-
-.v1-u-size5of12 {
-  width: 41.667% !important;
-}
-
-.v1-u-size1of2,
-.v1-u-size2of4,
-.v1-u-size3of6,
-.v1-u-size4of8,
-.v1-u-size5of10,
-.v1-u-size6of12 {
-  width: 50% !important;
-}
-
-.v1-u-size7of12 {
-  width: 58.333% !important;
-}
-
-.v1-u-size3of5,
-.v1-u-size6of10 {
-  width: 60% !important;
-}
-
-.v1-u-size5of8 {
-  width: 62.5% !important;
-}
-
-.v1-u-size2of3,
-.v1-u-size4of6,
-.v1-u-size8of12 {
-  width: 66.667% !important;
-}
-
-.v1-u-size7of10 {
-  width: 70% !important;
-}
-
-.v1-u-size3of4,
-.v1-u-size6of8,
-.v1-u-size9of12 {
-  width: 75% !important;
-}
-
-.v1-u-size4of5,
-.v1-u-size8of10 {
-  width: 80% !important;
-}
-
-.v1-u-size5of6,
-.v1-u-size10of12 {
-  width: 83.333% !important;
-}
-
-.v1-u-size7of8 {
-  width: 87.5% !important;
-}
-
-.v1-u-size9of10 {
-  width: 90% !important;
-}
-
-.v1-u-size11of12 {
-  width: 91.667% !important;
-}
-
-/* ==========================================================================
-   Dimension utilities (breakpoint 2)
-   ========================================================================== */
-
-/* Intrinsic widths
-   ========================================================================== */
-
-/**
- * Make an element shrink wrap its content.
- */
-
-.v2-u-sizeFit,
-.v2-u-sizeFitAlt {
-  display: block !important;
-  float: left !important;
-  width: auto !important;
-}
-
-.v2-u-sizeFitAlt {
-  float: right !important;
-}
-
-/**
- * Make an element fill the remaining space.
- * N.B. This will hide overflow.
- */
-
-.v2-u-sizeFill {
-  display: block !important;
-  overflow: hidden !important;
-  width: auto !important;
-}
-
-/**
- * An alternative method to make an element fill the remaining space.
- * N.B. Do not use if child elements might be wider than the remaining space.
- * In Chrome, Safari, and Firefox it results in undesired layout.
- */
-
-.v2-u-sizeFillAlt {
-  display: table-cell !important;
-  max-width: 100% !important;
-  width: 10000px !important;
-}
-
-/**
- * Make an element the width of its parent.
- */
-
-.v2-u-sizeFull {
-  -moz-box-sizing: border-box !important;
-  -webkit-box-sizing: border-box !important;
-  box-sizing: border-box !important;
-  display: block !important;
-  width: 100% !important;
-}
-
-/* Proportional widths
-   ========================================================================== */
-
-/**
- * Specify the proportional width of an object.
- * Intentional redundancy build into each set of unit classes.
- * Supports: 2, 3, 4, 5, 6, 8, 10, 12 part
- */
-
-.v2-u-size1of12 {
-  width: 8.333% !important;
-}
-
-.v2-u-size1of10 {
-  width: 10% !important;
-}
-
-.v2-u-size1of8 {
-  width: 12.5% !important;
-}
-
-.v2-u-size1of6,
-.v2-u-size2of12 {
-  width: 16.667% !important;
-}
-
-.v2-u-size1of5,
-.v2-u-size2of10 {
-  width: 20% !important;
-}
-
-.v2-u-size1of4,
-.v2-u-size2of8,
-.v2-u-size3of12 {
-  width: 25% !important;
-}
-
-.v2-u-size3of10 {
-  width: 30% !important;
-}
-
-.v2-u-size1of3,
-.v2-u-size2of6,
-.v2-u-size4of12 {
-  width: 33.333% !important;
-}
-
-.v2-u-size3of8 {
-  width: 37.5% !important;
-}
-
-.v2-u-size2of5,
-.v2-u-size4of10 {
-  width: 40% !important;
-}
-
-.v2-u-size5of12 {
-  width: 41.667% !important;
-}
-
-.v2-u-size1of2,
-.v2-u-size2of4,
-.v2-u-size3of6,
-.v2-u-size4of8,
-.v2-u-size5of10,
-.v2-u-size6of12 {
-  width: 50% !important;
-}
-
-.v2-u-size7of12 {
-  width: 58.333% !important;
-}
-
-.v2-u-size3of5,
-.v2-u-size6of10 {
-  width: 60% !important;
-}
-
-.v2-u-size5of8 {
-  width: 62.5% !important;
-}
-
-.v2-u-size2of3,
-.v2-u-size4of6,
-.v2-u-size8of12 {
-  width: 66.667% !important;
-}
-
-.v2-u-size7of10 {
-  width: 70% !important;
-}
-
-.v2-u-size3of4,
-.v2-u-size6of8,
-.v2-u-size9of12 {
-  width: 75% !important;
-}
-
-.v2-u-size4of5,
-.v2-u-size8of10 {
-  width: 80% !important;
-}
-
-.v2-u-size5of6,
-.v2-u-size10of12 {
-  width: 83.333% !important;
-}
-
-.v2-u-size7of8 {
-  width: 87.5% !important;
-}
-
-.v2-u-size9of10 {
-  width: 90% !important;
-}
-
-.v2-u-size11of12 {
-  width: 91.667% !important;
-}
-
-/* ==========================================================================
-   Dimension utilities (breakpoint 3)
-   ========================================================================== */
-
-/* Intrinsic widths
-   ========================================================================== */
-
-/**
- * Make an element shrink wrap its content.
- */
-
-.v3-u-sizeFit,
-.v3-u-sizeFitAlt {
-  display: block !important;
-  float: left !important;
-  width: auto !important;
-}
-
-.v3-u-sizeFitAlt {
-  float: right !important;
-}
-
-/**
- * Make an element fill the remaining space.
- * N.B. This will hide overflow.
- */
-
-.v3-u-sizeFill {
-  display: block !important;
-  overflow: hidden !important;
-  width: auto !important;
-}
-
-/**
- * An alternative method to make an element fill the remaining space.
- * N.B. Do not use if child elements might be wider than the remaining space.
- * In Chrome, Safari, and Firefox it results in undesired layout.
- */
-
-.v3-u-sizeFillAlt {
-  display: table-cell !important;
-  max-width: 100% !important;
-  width: 10000px !important;
-}
-
-/**
- * Make an element the width of its parent.
- */
-
-.v3-u-sizeFull {
-  -moz-box-sizing: border-box !important;
-  -webkit-box-sizing: border-box !important;
-  box-sizing: border-box !important;
-  display: block !important;
-  width: 100% !important;
-}
-
-/* Proportional widths
-   ========================================================================== */
-
-/**
- * Specify the proportional width of an object.
- * Intentional redundancy build into each set of unit classes.
- * Supports: 2, 3, 4, 5, 6, 8, 10, 12 part
- */
-
-.v3-u-size1of12 {
-  width: 8.333% !important;
-}
-
-.v3-u-size1of10 {
-  width: 10% !important;
-}
-
-.v3-u-size1of8 {
-  width: 12.5% !important;
-}
-
-.v3-u-size1of6,
-.v3-u-size2of12 {
-  width: 16.667% !important;
-}
-
-.v3-u-size1of5,
-.v3-u-size2of10 {
-  width: 20% !important;
-}
-
-.v3-u-size1of4,
-.v3-u-size2of8,
-.v3-u-size3of12 {
-  width: 25% !important;
-}
-
-.v3-u-size3of10 {
-  width: 30% !important;
-}
-
-.v3-u-size1of3,
-.v3-u-size2of6,
-.v3-u-size4of12 {
-  width: 33.333% !important;
-}
-
-.v3-u-size3of8 {
-  width: 37.5% !important;
-}
-
-.v3-u-size2of5,
-.v3-u-size4of10 {
-  width: 40% !important;
-}
-
-.v3-u-size5of12 {
-  width: 41.667% !important;
-}
-
-.v3-u-size1of2,
-.v3-u-size2of4,
-.v3-u-size3of6,
-.v3-u-size4of8,
-.v3-u-size5of10,
-.v3-u-size6of12 {
-  width: 50% !important;
-}
-
-.v3-u-size7of12 {
-  width: 58.333% !important;
-}
-
-.v3-u-size3of5,
-.v3-u-size6of10 {
-  width: 60% !important;
-}
-
-.v3-u-size5of8 {
-  width: 62.5% !important;
-}
-
-.v3-u-size2of3,
-.v3-u-size4of6,
-.v3-u-size8of12 {
-  width: 66.667% !important;
-}
-
-.v3-u-size7of10 {
-  width: 70% !important;
-}
-
-.v3-u-size3of4,
-.v3-u-size6of8,
-.v3-u-size9of12 {
-  width: 75% !important;
-}
-
-.v3-u-size4of5,
-.v3-u-size8of10 {
-  width: 80% !important;
-}
-
-.v3-u-size5of6,
-.v3-u-size10of12 {
-  width: 83.333% !important;
-}
-
-.v3-u-size7of8 {
-  width: 87.5% !important;
-}
-
-.v3-u-size9of10 {
-  width: 90% !important;
-}
-
-.v3-u-size11of12 {
-  width: 91.667% !important;
-}
-
-/* ==========================================================================
-   Spacing-specific utilities
-   ========================================================================== */
-
-/**
- * Used to adjust the default spacing between components
- * Use with great care!
- *
- * u-<type><direction><size>
- *
- * A = all
- * T = top
- * R = right
- * B = bottom
- * L = left
- * H = horizontal
- * V = vertical
- *
- * n = none
- * s = small
- * m = medium
- * l = large
- */
-
-/* All */
-
-.u-paddingAn {
-  padding: 0 !important;
-}
-
-.u-paddingAs {
-  padding: 5px !important;
-}
-
-.u-paddingAm {
-  padding: 10px !important;
-}
-
-.u-paddingAl {
-  padding: 20px !important;
-}
-
-.u-marginAn {
-  margin: 0 !important;
-}
-
-.u-marginAs {
-  margin: 5px !important;
-}
-
-.u-marginAm {
-  margin: 10px !important;
-}
-
-.u-marginAl {
-  margin: 20px !important;
-}
-
-/* Vertical */
-
-.u-paddingVn {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-.u-paddingVs {
-  padding-top: 5px !important;
-  padding-bottom: 5px !important;
-}
-
-.u-paddingVm {
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-}
-
-.u-paddingVl {
-  padding-top: 20px !important;
-  padding-bottom: 20px !important;
-}
-
-.u-marginVn {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.u-marginVs {
-  margin-top: 5px !important;
-  margin-bottom: 5px !important;
-}
-
-.u-marginVm {
-  margin-top: 10px !important;
-  margin-bottom: 10px !important;
-}
-
-.u-marginVl {
-  margin-top: 20px !important;
-  margin-bottom: 20px !important;
-}
-
-/* Horizontal */
-
-.u-paddingHn {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-.u-paddingHs {
-  padding-left: 5px !important;
-  padding-right: 5px !important;
-}
-
-.u-paddingHm {
-  padding-left: 10px !important;
-  padding-right: 10px !important;
-}
-
-.u-paddingHl {
-  padding-left: 20px !important;
-  padding-right: 20px !important;
-}
-
-.u-marginHn {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-.u-marginHs {
-  margin-left: 5px !important;
-  margin-right: 5px !important;
-}
-
-.u-marginHm {
-  margin-left: 10px !important;
-  margin-right: 10px !important;
-}
-
-.u-marginHl {
-  margin-left: 20px !important;
-  margin-right: 20px !important;
-}
-
-/* Top */
-
-.u-paddingTn {
-  padding-top: 0 !important;
-}
-
-.u-paddingTs {
-  padding-top: 5px !important;
-}
-
-.u-paddingTm {
-  padding-top: 10px !important;
-}
-
-.u-paddingTl {
-  padding-top: 20px !important;
-}
-
-.u-marginTn {
-  margin-top: 0 !important;
-}
-
-.u-marginTs {
-  margin-top: 5px !important;
-}
-
-.u-marginTm {
-  margin-top: 10px !important;
-}
-
-.u-marginTl {
-  margin-top: 20px !important;
-}
-
-/* Bottom */
-
-.u-paddingBn {
-  padding-bottom: 0 !important;
-}
-
-.u-paddingBs {
-  padding-bottom: 5px !important;
-}
-
-.u-paddingBm {
-  padding-bottom: 10px !important;
-}
-
-.u-paddingBl {
-  padding-bottom: 20px !important;
-}
-
-.u-marginBn {
-  margin-bottom: 0 !important;
-}
-
-.u-marginBs {
-  margin-bottom: 5px !important;
-}
-
-.u-marginBm {
-  margin-bottom: 10px !important;
-}
-
-.u-marginBl {
-  margin-bottom: 20px !important;
-}
-
-/* Left */
-
-.u-paddingLn {
-  padding-left: 0 !important;
-}
-
-.u-paddingLs {
-  padding-left: 5px !important;
-}
-
-.u-paddingLm {
-  padding-left: 10px !important;
-}
-
-.u-paddingLl {
-  padding-left: 20px !important;
-}
-
-.u-marginLn {
-  margin-left: 0 !important;
-}
-
-.u-marginLs {
-  margin-left: 5px !important;
-}
-
-.u-marginLm {
-  margin-left: 10px !important;
-}
-
-.u-marginLl {
-  margin-left: 20px !important;
-}
-
-/* Right */
-
-.u-paddingRn {
-  padding-right: 0 !important;
-}
-
-.u-paddingRs {
-  padding-right: 5px !important;
-}
-
-.u-paddingRm {
-  padding-right: 10px !important;
-}
-
-.u-paddingRl {
-  padding-right: 20px !important;
-}
-
-.u-marginRn {
-  margin-right: 0 !important;
-}
-
-.u-marginRs {
-  margin-right: 5px !important;
-}
-
-.u-marginRm {
-  margin-right: 10px !important;
-}
-
-.u-marginRl {
-  margin-right: 20px !important;
-}
-
-/* ==========================================================================
-   States utilities
-   ========================================================================== */
 
 /**
  * Indicate that interaction will result in an (in)action.
@@ -2256,6 +683,29 @@
 .u-isHidden {
   display: none !important;
   visibility: hidden !important;
+}
+
+/**
+ * Display a hidden-by-default element.
+ */
+
+.u-isShown {
+  display: block !important;
+  visibility: visible !important;
+}
+
+table.u-isShown {
+  display: table !important;
+}
+
+tr.u-isShown,
+tr.u-isShown {
+  display: table-row !important;
+}
+
+td.u-isShown,
+th.u-isShown {
+  display: table-cell !important;
 }
 
 /**
@@ -2284,9 +734,17 @@
   visibility: visible !important;
 }
 
-/* ==========================================================================
-   Text utilities
-   ========================================================================== */
+/*! suit-utils-text v0.3.0 | MIT License | github.com/suitcss */
+
+/**
+ * Word breaking
+ *
+ * Break strings when their length exceeds the width of their container.
+ */
+
+.u-textBreak {
+  word-wrap: break-word !important;
+}
 
 /**
  * Horizontal text alignment
@@ -2302,6 +760,22 @@
 
 .u-textRight {
   text-align: right !important;
+}
+
+/**
+ * Inherit the ancestor's text color.
+ */
+
+.u-textInheritColor {
+  color: inherit !important;
+}
+
+/**
+ * Prevent whitespace wrapping
+ */
+
+.u-textNoWrap {
+  white-space: nowrap !important;
 }
 
 /**
@@ -2324,35 +798,6 @@
   white-space: nowrap !important;
   word-wrap: normal !important;
   /* 2 */
-}
-
-/**
- * Word breaking
- *
- * Break strings when their length exceeds the width of their container.
- */
-
-.u-textBreak {
-  word-wrap: break-word !important;
-}
-
-/**
- * Inherit the ancestor's text color.
- */
-
-.u-textInheritColor {
-  color: inherit !important;
-}
-
-/**
- * Inherit the ancestor's text color for all states.
- */
-
-.u-textInheritAllColor,
-.u-textInheritAllColor:hover,
-.u-textInheritAllColor:focus,
-.u-textInheritAllColor:active {
-  color: inherit !important;
 }
 
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
@@ -3018,8 +1463,8 @@ th {
 }
 
 .TopBar-menu {
-  padding-left: 35px;
-  background: url("top-bar/images/menu.svg") no-repeat 0 0;
+  /*padding-left: 35px;
+  background: url("top-bar/images/menu.svg") no-repeat 0 0;*/
   float: left;
 }
 

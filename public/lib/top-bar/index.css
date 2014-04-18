@@ -22,8 +22,8 @@
 }
 
 .TopBar-menu {
-  padding-left: 35px;
-  background: url('images/menu.svg') no-repeat 0 0;
+  /*padding-left: 35px;
+  background: url('images/menu.svg') no-repeat 0 0;*/
   float: left;
 }
 
