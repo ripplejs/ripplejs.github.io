@@ -1617,6 +1617,10 @@ hr {
   color: #BCC3D2;
 }
 
+.Hero-share {
+  margin-top: 30px;
+}
+
 .Hero-content {
   text-align: center;
   width: 550px;
