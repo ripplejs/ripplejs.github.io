@@ -142,7 +142,7 @@ You can change the name of this property by using `View.parse`. This lets you cu
 options that can be passed into the view and where it gets the data from.
 
 <pre class="Code" data-language="js">
-View.parse(functon(options){
+View.parse(function(options){
   return {
     size: 50,
     time: options.startTime || new Date()
